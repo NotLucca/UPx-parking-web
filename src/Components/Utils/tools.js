@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import mcitylogo from "../../resources/images/logos/manchester_city_logo.png";
+import logo from "../../resources/images/logos/logo.png";
 import { toast } from "react-toastify";
 import { TabPanelUnstyled } from "@mui/base";
 import { firebase } from '../../firebase'
@@ -12,7 +12,7 @@ export const CityLogo = (props) => {
       style={{
         width: props.width,
         height: props.height,
-        background: `url(${mcitylogo}) no-repeat`,
+        background: `url(${logo}) no-repeat`,
       }}
     ></div>
   );

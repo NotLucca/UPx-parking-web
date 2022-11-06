@@ -13,7 +13,7 @@ const Footer = () => {
                 />
             </div>
             <div className='footer_descl'>
-                Manchester City 2021. All rights reserved
+                Parking Spot 2021. All rights reserved.
             </div>
         </footer>
     )

@@ -39,14 +39,15 @@ const Header = ({ user }) => {
             <CityLogo link={true} linkTo={"/"} width="70px" height="70px" />
           </div>
         </div>
-        <Link to="/the_team">
-          <Button color="inherit">The team</Button>
+        <Link to="/parking_spots">
+          <Button color="inherit">Vagas</Button>
         </Link>
-        <Link to="/the_matches">
-          <Button color="inherit">The matches</Button>
-        </Link>
+
         {user ? (
           <>
+          <Link to="/add_parking_spot">
+            <Button color="inherit">Add Parking Spot</Button>
+          </Link>
             <Link to="/dashboard">
               <Button color="inherit">Dashboard</Button>
             </Link>
