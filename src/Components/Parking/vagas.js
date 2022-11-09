@@ -30,8 +30,16 @@ const Vaga = ({ vaga }) => {
       }}
     >
       <p className="parking-spot__cardRegion">{vaga.region}</p>
-      <div className="parking-spot__cardHeader" id="qrCode" ref={componentRef} >
-        <QRCode value={vagaToJson} size={200} />
+      <div className="parking-spot__cardHeader" id="qrCode" ref={componentRef}>
+        <QRCode
+          value={vagaToJson}
+          size={100}
+          bgColor={"#FFFFFF"}
+          fgColor={"#000000"}
+          level={"L"}
+          includeMargin={true}
+          renderAs={"svg"}
+        />
       </div>
       <button onClick={handlePrint}>Imprimir!</button>
       <div className="parking-spot__cardBody">

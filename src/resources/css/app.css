@@ -819,8 +819,8 @@ footer .footer_discl {
 }
 
 .parking-spot {
-  width: 300px;
-  height: 300px;
+  width: auto;
+  height: auto;
   background: #d5ebfe;
   border-radius: 10px;
   display: flex;
@@ -829,7 +829,7 @@ footer .footer_discl {
   align-items: center;
   gap: 10px;
   cursor: pointer;
-
+  padding: 20px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 .parking-spot:hover {
