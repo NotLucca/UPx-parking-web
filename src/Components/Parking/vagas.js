@@ -3,15 +3,23 @@ import QRCode from "react-qr-code";
 import ReactToPrint from "react-to-print";
 import { useReactToPrint } from "react-to-print";
 
-const Vaga = ({ vaga }) => {
-  const vagaToJson = JSON.stringify(vaga);
+const Vaga = ({ vaga, deleteSpot, user }) => {
+  const vagaToJson = JSON.stringify({
+    spotId: vaga.spotId,
+    region: vaga.region,
+    name: vaga.name,
+    type: vaga.type,
+    latitude: vaga.latitude,
+    longitude: vaga.longitude,
+    address: vaga.address,
+  });
 
   //center object
   const marginTop = "45%";
-  const marginLeft = "300px";
+  const marginLeft = "35%";
 
   const getPageMargins = () => {
-    return `@page { margin: ${marginTop}  ${marginLeft}; }`;
+    return `@page { margin: 0 auto; margin-top: ${marginTop}; margin-left: ${marginLeft}; }`;
   };
 
   const componentRef = React.useRef();
@@ -26,22 +34,19 @@ const Vaga = ({ vaga }) => {
     <div
       className="parking-spot"
       style={{
-        backgroundColor: vaga.occupied ? "#D3D3D3" : "#00FF00",
+        backgroundColor: vaga.occupied ? "#A9A9A9" : "#B0E0E6",
       }}
     >
-      <p className="parking-spot__cardRegion">{vaga.region}</p>
       <div className="parking-spot__cardHeader" id="qrCode" ref={componentRef}>
+        <p className="parking-spot__cardRegion">{vaga.region}</p>
         <QRCode
           value={vagaToJson}
-          size={100}
+          size={200}
           bgColor={"#FFFFFF"}
           fgColor={"#000000"}
-          level={"L"}
-          includeMargin={true}
-          renderAs={"svg"}
+          level={"H"}
         />
       </div>
-      <button onClick={handlePrint}>Imprimir!</button>
       <div className="parking-spot__cardBody">
         <h3 className="parking-spot__cardTitle">{vaga.name}</h3>
         <p className="parking-spot__cardType">{vaga.type}</p>
@@ -49,7 +54,17 @@ const Vaga = ({ vaga }) => {
         <p className="parking-spot__cardOccupied">
           {vaga.occupied ? "Ocupado" : "Livre"}
         </p>
+        <button onClick={handlePrint}>Imprimir!</button>
+        {user ? (
+          <button
+            className="parking-spot__deleteButton"
+            onClick={() => deleteSpot(vaga.spotId)}
+          >
+            Deletar
+          </button>
+        ) : null}
       </div>
+      
     </div>
   );
 };

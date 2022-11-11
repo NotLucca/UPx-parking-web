@@ -12,51 +12,6 @@ import Dashboard from "./Components/Admin/Dashboard";
 import addParkingSpots from "./Components/Parking/AddParkingSpots";
 import Vagas from "./Components/Parking/vaga";
 
-// const vagas = [
-//   {
-//     spotId: 1,
-//     region: "A",
-//     name: "A1",
-//     type: "car",
-//     latitude: 0,
-//     longitude: 0,
-//     address: "DASDAS",
-//     occupied: true,
-//   },
-//   {
-//     spotId: 2,
-//     region: "A",
-//     name: "A1",
-//     type: "Car",
-//     latitude: 1230,
-//     longitude: 350,
-//     address: "Sao roque kkkkk",
-//     occupied: false,
-//   },
-//   {
-//     spotId: 3,
-//     region: "A",
-//     name: "A1",
-//     type: "Motorcycle",
-//     latitude: 1232,
-//     longitude: 350,
-//     address: "São Paulo",
-//     occupied: false,
-//   },
-//   { 
-//     spotId: 4,
-//     region: "B",
-//     name: "B1",
-//     type: "Car",
-//     latitude: 1230,
-//     longitude: 350,
-//     address: "Sorocaba",
-//     occupied: false,
-//   },
-
-
-// ];
-
 function Routes({ user }) {
   const [spotsData, setSpotsData] = useState(null);
 
@@ -69,15 +24,10 @@ function Routes({ user }) {
         setSpotsData(data);
       });
   }, [isClicked]);
- 
 
   const handleSpotsButton = () => {
     setIsClicked(!isClicked);
-    console.log(isClicked);
-    console.log(spotsData)
-  }
-
-  
+  };
 
   return (
     <BrowserRouter>
@@ -98,7 +48,12 @@ function Routes({ user }) {
           path="/parking_spots"
           exact
           component={(props) => (
-            <Vagas {...props} user={user} spotsData={spotsData} handleClick={handleSpotsButton} />
+            <Vagas
+              {...props}
+              user={user}
+              spotsData={spotsData}
+              handleClick={handleSpotsButton}
+            />
           )}
         />
         <Route path="/add_parking_spot" exact component={addParkingSpots} />

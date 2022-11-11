@@ -34,7 +34,7 @@ const SignIn = (props) => {
       .then(() => {
         setLoading(false);
         showSuccessToast("Deu certo");
-        props.history.push("/dashboard");
+        props.history.push("/");
       })
       .catch((error) => {
         setLoading(false);

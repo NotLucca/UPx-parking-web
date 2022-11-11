@@ -819,19 +819,77 @@ footer .footer_discl {
 }
 
 .parking-spot {
+  /* parking spot card */
   width: auto;
   height: auto;
+
   background: #d5ebfe;
-  border-radius: 10px;
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
-  cursor: pointer;
-  padding: 20px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+  padding: 10px 30px;
+  border-radius: 10px;
 }
-.parking-spot:hover {
-  background: #98c6e9;
+.buttons{
+  display: flex;
+  flex-direction: column;
+}
+
+.parking-spot__cardBody{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+}
+.parking-spot__cardTitle{
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+}
+.parking-spot__cardType{
+  font-size: 15px;
+  font-weight: 700;
+  color: black;
+}
+.parking-spot__cardRegion{
+  font-size: 30px;
+  font-weight: 700;
+  color: #131313;
+  padding: 0px 10px;
+}
+.parking-spot__cardAddress{
+  font-size: 15px;
+  font-weight: 700;
+  color: #131313;
+}
+
+.parking-spot__cardOccupied{
+  font-size: 15px;
+  font-weight: 700;
+  color: #131313;
+}
+@media screen and (max-width: 768px) {
+  .parking-spot{
+    flex-direction: column;
+
+    gap: 0px;
+  }
+  .parking-spot__cardRegion{
+    font-size: 20px;
+  }
+  /* change all flex-direction: row to column */
+  .parkingSpots__body{
+    flex-direction: column;
+  }
+  .parkingSpots__header{
+    margin-bottom: 20px;
+  }
+  .parkingSpots__empty{
+    margin-top: 0px;
+  }
+  
 }

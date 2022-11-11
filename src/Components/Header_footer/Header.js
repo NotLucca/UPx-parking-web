@@ -48,9 +48,7 @@ const Header = ({ user }) => {
           <Link to="/add_parking_spot">
             <Button color="inherit">Add Parking Spot</Button>
           </Link>
-            <Link to="/dashboard">
-              <Button color="inherit">Dashboard</Button>
-            </Link>
+            
             <Button color="inherit" onClick={() => logoutHandler()}>
               Log out
             </Button>
