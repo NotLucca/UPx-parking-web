@@ -85,22 +85,7 @@ const Home = ({ user }) => {
                 Adicionar Vaga
               </Button>
             </Link>
-            <Link to="/dashboard">
-              <Button
-                variant="contained"
-                color="primary"
-                style={{
-                  backgroundColor: "#00285e",
-                  color: "white",
-                  fontWeight: "bold",
-                  width: "10rem",
-                  height: "50px",
-                  marginBottom: "10px",
-                }}
-              >
-                Dashboard
-              </Button>
-            </Link>
+          
           </>
         ) : null}
       </section>

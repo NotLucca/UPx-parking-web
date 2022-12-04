@@ -2,7 +2,7 @@ import Vaga from "./vagas";
 import { CircularProgress } from "@material-ui/core";
 import { useState } from "react";
 
-const Vagas = ({ spotsData, handleClick, user}) => {
+const Vagas = ({ spotsData, handleClick, user }) => {
   const deleteSpot = (id) => {
     fetch(`https://upx4api2022.azurewebsites.net/spot/${id}`, {
       method: "DELETE",
@@ -13,9 +13,6 @@ const Vagas = ({ spotsData, handleClick, user}) => {
     });
   };
 
-
-
-
   return (
     <div className="parkingSpots">
       <div className="parkingSpots__header">
@@ -24,7 +21,14 @@ const Vagas = ({ spotsData, handleClick, user}) => {
 
       <div className="parkingSpots__body">
         {spotsData ? (
-          spotsData.map((vaga) => <Vaga key={vaga.spotId} vaga={vaga} deleteSpot={deleteSpot} user={user} />)
+          spotsData.map((vaga) => (
+            <Vaga
+              key={vaga.spotId}
+              vaga={vaga}
+              deleteSpot={deleteSpot}
+              user={user}
+            />
+          ))
         ) : (
           <div className="parkingSpots__empty">
             <h1 className="parkingSpots__empty__title">
@@ -33,7 +37,6 @@ const Vagas = ({ spotsData, handleClick, user}) => {
           </div>
         )}
       </div>
-       
     </div>
   );
 };
